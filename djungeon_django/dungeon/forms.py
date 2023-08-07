@@ -1,6 +1,7 @@
 from django import forms
 from .models import Room
 
+
 def input_attributes(placeholder, rows=1):
     return {
         "class": "shadow-box",
@@ -8,6 +9,7 @@ def input_attributes(placeholder, rows=1):
         "cols": 25,
         "rows": rows,
     }
+
 
 class RoomCreateForm(forms.ModelForm):
     name = forms.CharField(
@@ -20,7 +22,9 @@ class RoomCreateForm(forms.ModelForm):
     prompt = forms.CharField(
         max_length=250,
         widget=forms.Textarea(
-            attrs=input_attributes("You find yourself at a junction, do you...", 10)
+            attrs=input_attributes(
+                "You find yourself at a junction, do you...", 10
+            )
         )
     )
 

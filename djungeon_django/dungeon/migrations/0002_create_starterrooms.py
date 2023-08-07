@@ -2,41 +2,43 @@
 
 from django.db import migrations
 
+
 def forwards(apps, schema_editor):
     Room = apps.get_model("dungeon", "Room")
     Choice = apps.get_model("dungeon", "Choice")
 
     # Endings
     win_room = Room.objects.create(
-        name = "YOU WIN!",
-        prompt = "Whether by wits, skill or (most likely) blind luck, "\
-                "you escaped the Djungeon!",
-        type = 1,
+        name="YOU WIN!",
+        prompt="Whether by wits, skill or (most likely) blind luck, "
+               "you escaped the Djungeon!",
+        type=1,
     )
     lose_room = Room.objects.create(
-        name = "YOU LOSE",
-        prompt = "Maybe it was that potion you drank, or you took a bad turn. "\
-                "Whatever it was, the Djungeon has claimed another soul...",
-        type = 2,
+        name="YOU LOSE",
+        prompt="Maybe it was that potion you drank, or you took a bad turn. "
+               "Whatever it was, the Djungeon has claimed another soul...",
+        type=2,
     )
 
     # Initial Room
     win_choice = Choice.objects.create(
-        text = "Turn Left",
-        room = win_room,
+        text="Turn Left",
+        room=win_room,
     )
 
     lose_choice = Choice.objects.create(
-        text = "Turn Right",
-        room = lose_room,
+        text="Turn Right",
+        room=lose_room,
     )
 
     Room.objects.create(
-        name = "The Corridor of Choice",
-        prompt = "You find yourself at a junction, do you...",
-        choice_1 = win_choice,
-        choice_2 = lose_choice,
+        name="The Corridor of Choice",
+        prompt="You find yourself at a junction, do you...",
+        choice_1=win_choice,
+        choice_2=lose_choice,
     )
+
 
 def reverse(apps, schema_editor):
     Room = apps.get_model("dungeon", "Room")

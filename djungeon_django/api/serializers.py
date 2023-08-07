@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from dungeon.models import Room, Choice
 
+
 class ChoiceSerializer(serializers.ModelSerializer):
     room = serializers.UUIDField(source="room.uuid")
 
@@ -10,6 +11,7 @@ class ChoiceSerializer(serializers.ModelSerializer):
             "text",
             "room",
         )
+
 
 class RoomSerializer(serializers.ModelSerializer):
     choice_1 = ChoiceSerializer(allow_null=True)
@@ -30,14 +32,16 @@ class RoomSerializer(serializers.ModelSerializer):
             "is_ending",
             "get_absolute_url",
         )
-    
-    def get_type_class(self,obj):
+
+    def get_type_class(self, obj):
         return obj.get_type_display()
+
 
 class ChoiceCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Choice
         fields = ("text",)
+
 
 class RoomCreateSerializer(serializers.ModelSerializer):
     class Meta:

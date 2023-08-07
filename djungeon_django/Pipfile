@@ -9,6 +9,7 @@ django-extensions = "*"
 django-rest-framework = "*"
 django-cors-headers = "*"
 djoser = "*"
+pep8 = "*"
 
 [dev-packages]
 ipython = "*"
