@@ -145,6 +145,7 @@
     /* ----- Transitions ----- */
     .route-enter-from {
         opacity: 0;
+        transform: translateY(10px);
     }
     .route-enter-active {
         transition: all 1s ease-out;
