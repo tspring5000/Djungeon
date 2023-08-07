@@ -11,7 +11,7 @@
     </div>
 
     <div class="flex">
-        {% if not object.type %}
+        {% if not object.is_ending %}
         <a class="btn-link" href="{{ object.choice_1.room.get_absolute_url }}">
             <button class="btn shadow-box"><h3>{{ object.choice_1.text }}</h3></button>
         </a>
