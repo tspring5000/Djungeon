@@ -15,6 +15,16 @@
     src: url("../RubikMonoOne-Regular.ttf");
 }
 
+/* ----- Animation ----- */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
 /* ----- General Styling ----- */
 
 body {
@@ -23,6 +33,12 @@ body {
     font-family: 'Rubik-Mono';
     text-align: center;
     margin: 4vmin;
+}
+
+.content {
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .shadow-box {

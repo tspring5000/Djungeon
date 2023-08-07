@@ -4,7 +4,11 @@
         <router-link class="header-link" to="/">Djungeon</router-link>
     </h1>
     <section class="section">
-      <router-view/>
+      <router-view v-slot="{ Component }">
+        <transition name="route" mode="out-in">
+            <component :is="Component"></component>
+        </transition>
+      </router-view>
     </section>
   </div>
 </template>
@@ -136,5 +140,13 @@
     .btn:active {
         color: var(--fo);
         box-shadow: -2px -2px 0 var(--fo);
+    }
+
+    /* ----- Transitions ----- */
+    .route-enter-from {
+        opacity: 0;
+    }
+    .route-enter-active {
+        transition: all 1s ease-out;
     }
 </style>

@@ -11,9 +11,11 @@
     <body>
         <div class="container">
             <h1 class="header"><a class="header-link" href="{% url 'room-create' %}">Djungeon</a></h1>
-            <h3 class="header">{% block header %}{% endblock header %}</h3>
-            <br>
-            {% block content %}{% endblock content %}
+            <div class="content">
+                <h3 class="header">{% block header %}{% endblock header %}</h3>
+                <br>
+                {% block content %}{% endblock content %}
+            </div>
         </div>
     </body>
 </html>

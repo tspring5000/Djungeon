@@ -1,5 +1,5 @@
 <template>
-    <div class="play">
+    <div class="play" :key="anim">
         <h3 class="header">{{ room.name }}</h3>
         <h2 :class="[room.type_class]">{{ room.prompt }}</h2>
 
@@ -31,6 +31,7 @@ export default {
     data() {
         return {
             room: {},
+            anim: 0,
         }
     },
     components: {
@@ -46,6 +47,7 @@ export default {
             .catch(error => {
                 console.log(error)
             })
+            this.anim += 1;
         },
     }
 }
