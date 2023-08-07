@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Djungeon</title>
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="header"><a class="header-link" href="{% url 'room-create' %}">Djungeon</a></h1>
+            <h3 class="header">{% block header %}{% endblock header %}</h3>
+            <br>
+            {% block content %}{% endblock content %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    Create a new room
+{% endblock header %}
+
+{% block content %}
+    
+    {% for key,value in form.errors.items %}
+        <p class="errortxt">{{ key }} : {{ value.0 }}</p>
+    {% endfor %}
+
+    <form action="" spellcheck="false" method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="flex flex-col">
+            <div class="form-item">
+                <label>Room Name</label><br>
+                {{ form.name }}
+            </div>
+    
+            <div class="form-item">
+                <label>Room Prompt</label><br>
+                {{ form.prompt }}
+            </div>
+    
+            <div class="form-item">
+                <label>Choice 1</label><br>
+                {{ form.choice_1_text }}
+            </div>
+    
+            <div class="form-item">
+                <label>Choice 2</label><br>
+                {{ form.choice_2_text }}
+            </div>
+    
+            <div>
+                <button class="btn shadow-box"><h3>PROCEED</h3></button>
+            </div>
+        </div>
+    </form>
+{% endblock content %}

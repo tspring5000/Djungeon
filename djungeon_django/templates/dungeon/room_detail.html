@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    {{ object.name }}
+{% endblock header %}
+
+{% block content %}
+
+    <div class={{ object.get_type_display }}>
+        <h2>{{ object.prompt }}</h2>
+    </div>
+
+    <div class="flex">
+        {% if not object.type %}
+        <a class="btn-link" href="{{ object.choice_1.room.get_absolute_url }}">
+            <button class="btn shadow-box"><h3>{{ object.choice_1.text }}</h3></button>
+        </a>
+
+        <a class="btn-link" href="{{ object.choice_2.room.get_absolute_url }}">
+            <button class="btn shadow-box"><h3>{{ object.choice_2.text }}</h3></button>
+        </a>
+    {% else %}
+        <a class="btn-link" href="{% url 'room-create' %}">
+            <button class="btn shadow-box"><h3>Try again</h3></button>
+        </a>
+    {% endif %}
+    </div>
+{% endblock content %}
