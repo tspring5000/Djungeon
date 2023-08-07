@@ -18,3 +18,10 @@ In djungeon_django, run `pipenv install` and `pipenv shell`. Then, run migration
 
 ### Vue
 In djungeon_vue, run npm install and then `npm run serve`. Similar to the above, it must run on port 8080 to connect to Django
+
+## Screenshots
+![Form](screenshots/Form.png)
+![Room](screenshots/Room.png)
+![Win](screenshots/Win.png)
+![Lose](screenshots/Lose.png)
+
