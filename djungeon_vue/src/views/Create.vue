@@ -1,7 +1,6 @@
 <template>
   <div class="create">
     <h3 class="header">Create a new room</h3>
-    <br>
 
     <p class="errortxt" v-for="(value, key) in errors">{{ key }} : {{ value }}</p>
 
